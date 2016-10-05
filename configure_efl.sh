@@ -3,7 +3,7 @@ cd efl
 export CXXFLAGS="-std=gnu++11 -fno-exceptions"
 export CFLAGS="-I/opt/windows_64/include/ -g -O2"
 export LDFLAGS="-L/opt/windows_64/lib64/ -lws2_32 -llua"
-export PKG_CONFIG_PATH="/opt/windows_64/lib64/pkgconfig"
+export PKG_CONFIG_LIBDIR="/opt/windows_64/lib64/pkgconfig"
 #./configure \
 ./autogen.sh \
 		--prefix=/opt/windows_64 \
