@@ -1,15 +1,30 @@
 set -e
 
-LIST="env_config/win_builds_64.list"
-BASE_URL="http://win-builds.org/1.5.0/packages/windows_64/"
-
-if [[ -f/opt/windows_64 && -L /opt/windows_64 ]] ;
-then
-  echo "Removing old link /opt/windows_64"
-  sudo rm /opt/windows_64
+if [ "$#" -ne 0 ]; then
+  if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters"
+    exit 1
+  fi
+  if [[ $1 != 64 ]] && [[ $1 != 32 ]]; then
+    echo "Illegal argument. Expected 32 or 64"
+    exit 1
+  fi
+  BITS=$1
+else
+  BITS=64
 fi
-echo "Creating new link /opt/windows_64 -> $PWD/opt/windows_64"
-sudo ln -s $PWD/opt/windows_64 /opt/
+
+LIST="env_config/win_builds_$BITS.list"
+BASE_URL="http://win-builds.org/1.5.0/packages/windows_$BITS/"
+BASE_PATH="/opt/windows_$BITS"
+
+if [[ -f $BASE_PATH && -L $BASE_PATH ]] ;
+then
+  echo "Removing old link $BASE_PATH"
+  sudo rm $BASE_PATH
+fi
+echo "Creating new link $BASE_PATH -> $PWD$BASE_PATH"
+sudo ln -s $PWD$BASE_PATH /opt/
 echo ""
 
 echo "Downloading packages into ./download/"

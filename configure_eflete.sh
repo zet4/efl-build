@@ -1,13 +1,36 @@
 set -e
+
+if [ "$#" -ne 0 ]; then
+  if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters"
+    exit 1
+  fi
+  if [[ $1 != 64 ]] && [[ $1 != 32 ]]; then
+    echo "Illegal argument. Expected 32 or 64"
+    exit 1
+  fi
+  BITS=$1
+else
+  BITS=64
+fi
+
+if [[ $BITS == 64 ]]; then
+  LIBS="lib64"
+  HOST="x86_64-w64-mingw32"
+else
+  LIBS="lib"
+  HOST="i686-w64-mingw32"
+fi
+
 cd eflete
 export CXXFLAGS="-std=gnu++11 -fno-exceptions"
-export CFLAGS="-I/opt/windows_64/include/ -g -O2"
-export LDFLAGS="-L/opt/windows_64/lib64/ -lws2_32 -llua"
-export PKG_CONFIG_LIBDIR="/opt/windows_64/lib64/pkgconfig"
-export PKG_CONFIG_PATH="/opt/windows_64/lib/pkgconfig"
+export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
+export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua"
+export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
+export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 ./autogen.sh \
-		--prefix=/opt/windows_64 \
-		--host=x86_64-w64-mingw32 \
+		--prefix=/opt/windows_$BITS \
+		--host=$HOST \
 		--disable-budio \
 		--disable-nls \
 		--with-eolian-gen=`which eolian_gen` \
