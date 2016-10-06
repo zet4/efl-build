@@ -3,29 +3,38 @@ set -e
 LIST="env_config/win_builds_64.list"
 BASE_URL="http://win-builds.org/1.5.0/packages/windows_64/"
 
-echo "Creating links..."
+if [[ -f/opt/windows_64 && -L /opt/windows_64 ]] ;
+then
+  echo "Removing old link /opt/windows_64"
+  sudo rm /opt/windows_64
+fi
+echo "Creating new link /opt/windows_64 -> $PWD/opt/windows_64"
 sudo ln -s $PWD/opt/windows_64 /opt/
-echo "Creating links... done"
+echo ""
 
-echo "Downloading packages into download..."
+echo "Downloading packages into ./download/"
 mkdir -p download
 while read pkg; do
-  if [ ! -f download/$pkg ]; then
-    wget $BASE_URL$pkg -P download -nv
+  if [[ ! ${pkg:0:1} == "#" ]] ;
+  then
+    if [ ! -f download/$pkg ]; then
+      wget $BASE_URL$pkg -P download -q
+    fi
+    echo "[+] $pkg"
   fi
 done < $LIST
-echo "Downloading packages... done"
+echo ""
 
-echo "Unpacking packages into opt..."
+echo "Unpacking packages into ./opt/"
 rm -rf opt
 mkdir -p opt
 while read pkg; do
-if [[ ${pkg:0:1} == "#" ]] ;
+if [[ ! ${pkg:0:1} == "#" ]] ;
 then
-  echo "Skipping $pkg"
-else
-  echo "Extraction $pkg"
   tar -xf download/$pkg -C opt
+  echo "[+] $pkg"
 fi
 done < $LIST
-echo "Unpacking packages... done"
+echo ""
+
+echo "Setup finished"
