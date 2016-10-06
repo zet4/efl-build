@@ -2,7 +2,7 @@ set -e
 cd efl
 export CXXFLAGS="-std=gnu++11 -fno-exceptions"
 export CFLAGS="-I/opt/windows_64/include/ -g -O2"
-export LDFLAGS="-L/opt/windows_64/lib64/ -lws2_32 -llua"
+export LDFLAGS="-L/opt/windows_64/lib64/ -lws2_32 -llua -llibintl"
 export PKG_CONFIG_LIBDIR="/opt/windows_64/lib64/pkgconfig"
 #./configure \
 ./autogen.sh \
@@ -20,7 +20,6 @@ export PKG_CONFIG_LIBDIR="/opt/windows_64/lib64/pkgconfig"
 		--disable-cxx-bindings \
 		--disable-image-loader-jp2k \
 		--disable-static \
-		--disable-nls \
 		--with-eolian-gen=`which eolian_gen` \
 		--with-edje-cc=`which edje_cc` \
 		--with-eet-eet=`which eet` \
