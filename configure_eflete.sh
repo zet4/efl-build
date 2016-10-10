@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 if [ "$#" -ne 0 ]; then
@@ -33,11 +34,11 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 		--host=$HOST \
 		--disable-audio \
 		--disable-nls \
-		--with-eolian-gen=`which eolian_gen` \
-		--with-edje-cc=`which edje_cc` \
-		--with-eet-eet=`which eet` \
-		--with-elm-prefs-cc=`which elm_prefs_cc` \
-		--with-elementary-codegen=`which elementary_codegen`
+		--with-eolian-gen=        "$(which eolian_gen)" \
+		--with-edje-cc=           "$(which edje_cc)" \
+		--with-eet-eet=           "$(which eet)" \
+		--with-elm-prefs-cc=      "$(which elm_prefs_cc)" \
+		--with-elementary-codegen="$(which elementary_codegen)"
 make clean
 make
 make install
