@@ -31,7 +31,7 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 ./autogen.sh \
 		--prefix=/opt/windows_$BITS \
 		--host=$HOST \
-		--disable-budio \
+		--disable-audio \
 		--disable-nls \
 		--with-eolian-gen=`which eolian_gen` \
 		--with-edje-cc=`which edje_cc` \
