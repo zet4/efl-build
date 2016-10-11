@@ -45,10 +45,10 @@ export PKG_CONFIG_PATH=""
 		--disable-cxx-bindings \
 		--disable-image-loader-jp2k \
 		--disable-static \
-		--with-eolian-gen=        "$(which eolian_gen)" \
-		--with-edje-cc=           "$(which edje_cc)" \
-		--with-eet-eet=           "$(which eet)" \
-		--with-elm-prefs-cc=      "$(which elm_prefs_cc)" \
+		--with-eolian-gen="$(which eolian_gen)" \
+		--with-edje-cc="$(which edje_cc)" \
+		--with-eet-eet="$(which eet)" \
+		--with-elm-prefs-cc="$(which elm_prefs_cc)" \
 		--with-elementary-codegen="$(which elementary_codegen)"
 make clean
 make
