@@ -19,7 +19,7 @@ LIST="env_config/win_builds_$BITS.list"
 BASE_URL="http://win-builds.org/1.5.0/packages/windows_$BITS/"
 BASE_PATH="/opt/windows_$BITS"
 
-if [ -e $BASE_PATH ] && [ -L $BASE_PATH ] ;
+if [ -L $BASE_PATH ] ;
 then
   echo "Removing old link $BASE_PATH"
   sudo rm $BASE_PATH
