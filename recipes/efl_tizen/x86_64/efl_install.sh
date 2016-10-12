@@ -8,6 +8,7 @@ mkdir --parents "$PWD/cross/x86_64/efl_tizen"
 bash "$PWD/recipes/link_deps_list.sh" "$PWD/recipes/efl_tizen/x86_64/deps.list" "$PWD/packages/x86_64" "$PWD/cross/x86_64/efl_tizen"
 
 echo "Linking $PWD/opt/windows_64"
+mkdir --parents "$PWD/opt"
 if [ -L "$PWD/opt/windows_64" ]
 then
   rm "$PWD/opt/windows_64"

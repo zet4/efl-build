@@ -8,6 +8,7 @@ mkdir --parents "$PWD/cross/i686/efl_1.18"
 bash "$PWD/recipes/link_deps_list.sh" "$PWD/recipes/efl_1.18/i686/deps.list" "$PWD/packages/i686" "$PWD/cross/i686/efl_1.18"
 
 echo "Linking $PWD/opt/windows_32"
+mkdir --parents "$PWD/opt"
 if [ -L "$PWD/opt/windows_32" ]
 then
   rm "$PWD/opt/windows_32"
