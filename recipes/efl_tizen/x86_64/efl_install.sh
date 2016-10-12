@@ -53,5 +53,5 @@ export PKG_CONFIG_PATH=""
 --enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba
 
 make clean
-make -j $PROC_COUNT
-make install -j $PROC_COUNT
+make -j "$PROC_COUNT"
+make install -j "$PROC_COUNT"

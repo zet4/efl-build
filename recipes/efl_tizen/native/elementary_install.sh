@@ -15,5 +15,5 @@ export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig"
 --prefix="$PREFIX"
 
 make clean
-make -j $PROC_COUNT
-make install -j $PROC_COUNT
+make -j "$PROC_COUNT"
+make install -j "$PROC_COUNT"

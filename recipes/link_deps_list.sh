@@ -30,4 +30,4 @@ while read pkg; do
     bash "$SRC_DIR/link_folders_recursively.sh" "$PKG_DIR/${pkg[0]}" "$DEST_DIR"
     echo "[+] ${pkg[0]}"
   fi
-done < $LIST
+done < "$LIST"

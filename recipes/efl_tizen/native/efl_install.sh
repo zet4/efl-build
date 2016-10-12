@@ -12,8 +12,8 @@ sed -i '5244s/.*/ }/' src/lib/edje/edje_calc.c
 ./autogen.sh --prefix="$PREFIX"
 
 make clean
-make -j $PROC_COUNT
-make install -j $PROC_COUNT
+make -j "$PROC_COUNT"
+make install -j "$PROC_COUNT"
 
 #restoring sources
 cp src/lib/edje/edje_calc.c.bak src/lib/edje/edje_calc.c

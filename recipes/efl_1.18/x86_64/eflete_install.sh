@@ -27,5 +27,5 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 --with-elementary-codegen="$native/elementary_codegen"
 
 make clean
-make -j $PROC_COUNT
-make install -j $PROC_COUNT
+make -j "$PROC_COUNT"
+make install -j "$PROC_COUNT"

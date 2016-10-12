@@ -52,7 +52,7 @@ while read pkg; do
     fi
     echo "[+] ${pkg[0]}"
   fi
-done < $LIST
+done < "$LIST"
 
 echo "Unpacking packages into $PKG_DIR"
 while read pkg; do
@@ -65,7 +65,7 @@ then
     mkdir "$PKG_DIR/${pkg[0]}"
     IFS=' '
     tar -xf "$DWN_DIR/${pkg[0]}" -C "$PKG_DIR/${pkg[0]}" ${pkg[2]-$DEFAULT_TAR_ARGS}
-    echo "[+] $pkg"
+    echo "[+] ${pkg[0]}"
   fi
 fi
-done < $LIST
+done < "$LIST"

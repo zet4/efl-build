@@ -9,5 +9,5 @@ cd ./sources/efl_1.18/efl
 ./autogen.sh --prefix="$PREFIX"
 
 make clean
-make -j $PROC_COUNT
-make install -j $PROC_COUNT
+make -j "$PROC_COUNT"
+make install -j "$PROC_COUNT"

@@ -6,7 +6,7 @@ link() {
   package=$2
   mkdir --parents "./sources/$efl"
 
-  if [ ! -e ./sources/$efl/$package ]
+  if [ ! -e "./sources/$efl/$package" ]
   then
     read -e -p "[$efl] $package sources path: " -i "/" SRC
     if [[ ! "${SRC}" == "/" ]]
