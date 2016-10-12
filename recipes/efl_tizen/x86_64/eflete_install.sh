@@ -12,7 +12,7 @@ cd ./sources/efl_tizen/eflete
 
 export CXXFLAGS="-std=gnu++11 -fno-exceptions"
 export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
-export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -llibintl"
+export LDFLAGS="-L/opt/windows_$BITS/$LIBS/"
 export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
 export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 
@@ -20,6 +20,7 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 --prefix=/opt/windows_$BITS \
 --host=$HOST \
 --disable-audio \
+--disable-nls \
 --with-eolian-gen="$native/eolian_gen" \
 --with-edje-cc="$native/edje_cc" \
 --with-eet-eet="$native/eet" \

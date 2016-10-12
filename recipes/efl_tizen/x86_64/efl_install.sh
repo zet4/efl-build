@@ -24,7 +24,7 @@ cd ./sources/efl_tizen/efl
 
 export CXXFLAGS="-std=gnu++11 -fno-exceptions"
 export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
-export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua -llibintl"
+export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua"
 export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
 export PKG_CONFIG_PATH=""
 
@@ -43,6 +43,7 @@ export PKG_CONFIG_PATH=""
 --disable-cxx-bindings \
 --disable-image-loader-jp2k \
 --disable-static \
+--disable-nls \
 --with-eolian-gen="$native/eolian_gen" \
 --with-edje-cc="$native/edje_cc" \
 --with-eet-eet="$native/eet" \
