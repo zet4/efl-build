@@ -1,0 +1,50 @@
+efl-cross-build project is set of scripts that makes cross compilation of EFL on
+Linux for Windows easier.
+
+PREPARATION:
+1. sudo ./setup.sh
+
+   this will create symlinks /opt/windows_32 and /opt/windows_64. This pathes are
+   hard-coded into packages from Win-Builds and we need them being available on
+   build system for package-config to work properly. This is the only operation
+   that requires root permissions.
+
+2. ./link_sources.sh
+
+   All build recipes are expecting to find source code in sources directory.
+   You can either copy them manualy or create links using ./link_sources.sh
+   Expected structrure:
+   sources/
+   ├── efl_1.18
+   │   ├── efl
+   │   └── eflete
+   └── efl_tizen
+       ├── efl
+       ├── eflete
+       └── elementary
+
+BUILD
+   Here are examples of your next steps
+
+1. Eflete on efl 1.18 for win64:
+   ./build.sh efl_1.18 native efl
+   ./build.sh efl_1.18 x86_64 efl
+   ./build.sh efl_1.18 x86_64 eflete
+
+2. Eflete on efl 1.18 for win32:
+   ./build.sh efl_1.18 native efl
+   ./build.sh efl_1.18 x686 efl
+   ./build.sh efl_1.18 x686 eflete
+
+3. Eflete on efl_tizen for win64:
+  ./build.sh efl_tizen native efl
+  ./build.sh efl_tizen native elementary
+  ./build.sh efl_tizen x86_64 efl
+  ./build.sh efl_tizen x86_64 elementary
+  ./build.sh efl_tizen x86_64 eflete
+
+DEPLOYMENT
+   Just copy files from /opt/windows_XX or ./cross/<TARGET_ARCH>/<TARGET_EFL>
+   expanding symlink. I.e:
+
+   cp -RL ./cross/x64_86/efl_1.18 ./deploy_folder
