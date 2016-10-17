@@ -7,7 +7,7 @@ cd ./sources/efl_tizen/efl
 
 #Tizen efl is somehow broken without specific flags combination so we should change one line is sources for native build
 cp src/lib/edje/edje_calc.c src/lib/edje/edje_calc.c.bak
-sed -i '5244s/.*/ }/' src/lib/edje/edje_calc.c
+sed -i '5558s/.*/ }/' src/lib/edje/edje_calc.c
 
 ./autogen.sh --prefix="$PREFIX"
 

@@ -20,6 +20,7 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 --prefix=/opt/windows_$BITS \
 --host=$HOST \
 --disable-audio \
+--enable-tizen \
 --disable-nls \
 --with-eolian-gen="$native/eolian_gen" \
 --with-edje-cc="$native/edje_cc" \
