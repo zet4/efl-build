@@ -18,10 +18,13 @@ PREPARATION:
    ├── efl_1.18
    │   ├── efl
    │   └── eflete
-   └── efl_tizen
+   ├── efl_tizen
+   │   ├── efl
+   │   ├── eflete
+   │   └── elementary
+   └── efl_upstream
        ├── efl
-       ├── eflete
-       └── elementary
+       └── eflete
 
 BUILD
    Here are examples of your next steps
@@ -42,6 +45,16 @@ BUILD
   ./build.sh efl_tizen x86_64 efl
   ./build.sh efl_tizen x86_64 elementary
   ./build.sh efl_tizen x86_64 eflete
+
+4. Eflete on efl upstream for win64:
+   ./build.sh efl_upstream native efl
+   ./build.sh efl_upstream x86_64 efl
+   ./build.sh efl_upstream x86_64 eflete
+
+5. Eflete on efl upstream for win32:
+   ./build.sh efl_upstream native efl
+   ./build.sh efl_upstream x686 efl
+   ./build.sh efl_upstream x686 eflete
 
 DEPLOYMENT
    Just copy files from /opt/windows_XX or ./cross/<TARGET_ARCH>/<TARGET_EFL>

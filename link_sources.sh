@@ -30,3 +30,5 @@ link efl_1.18 eflete
 link efl_tizen efl
 link efl_tizen elementary
 link efl_tizen eflete
+link efl_upstream efl
+link efl_upstream eflete
