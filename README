@@ -38,8 +38,8 @@ BUILD
 
 2. Eflete on efl 1.18 for win32:
    step 1: ./build.sh efl_1.18 native efl
-   step 2: ./build.sh efl_1.18 x686 efl
-   step 3: ./build.sh efl_1.18 x686 eflete
+   step 2: ./build.sh efl_1.18 i686 efl
+   step 3: ./build.sh efl_1.18 i686 eflete
 
 3. Eflete on efl_tizen for win64:
    step 1: ./build.sh efl_tizen native efl
@@ -48,12 +48,19 @@ BUILD
    step 4: ./build.sh efl_tizen x86_64 elementary
    step 5: ./build.sh efl_tizen x86_64 eflete
 
-4. Eflete on efl upstream for win64:
+4. Eflete on efl_tizen for win32:
+   step 1: ./build.sh efl_tizen native efl
+   step 2: ./build.sh efl_tizen native elementary
+   step 3: ./build.sh efl_tizen i686 efl
+   step 4: ./build.sh efl_tizen i686 elementary
+   step 5: ./build.sh efl_tizen i686 eflete
+
+5. Eflete on efl upstream for win64:
    step 1: ./build.sh efl_upstream native efl
    step 2: ./build.sh efl_upstream x86_64 efl
    step 3: ./build.sh efl_upstream x86_64 eflete
 
-5. Eflete on efl upstream for win32:
+6. Eflete on efl upstream for win32:
    step 1: ./build.sh efl_upstream native efl
    step 2: ./build.sh efl_upstream x686 efl
    step 3: ./build.sh efl_upstream x686 eflete
