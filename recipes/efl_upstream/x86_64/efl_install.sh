@@ -14,7 +14,7 @@ then
   rm "$PWD/opt/windows_64"
 fi
 ln -s "$PWD/cross/x86_64/efl_upstream" "$PWD/opt/windows_64"
-ln -s "$PWD/recipes/efl_upstream/x86_64/pthread.h" "$PWD/opt/windows_64/include/pthread.h"
+#ln -s "$PWD/recipes/efl_upstream/x86_64/pthread.h" "$PWD/opt/windows_64/include/pthread.h"
 
 native=$PWD/native/efl_upstream/bin
 
