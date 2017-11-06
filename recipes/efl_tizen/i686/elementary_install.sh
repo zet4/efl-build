@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-#PROC_COUNT=$(grep -c ^processor /proc/cpuinfo)
+PROC_COUNT=$(grep -c ^processor /proc/cpuinfo)
 # elementary build fails if it runs in parallel
-PROC_COUNT=1
 native=$PWD/native/efl_tizen/bin
+ln -fs $native/eolian_gen $native/eolian_gen.exe
 
 BITS=32
 LIBS="lib"
