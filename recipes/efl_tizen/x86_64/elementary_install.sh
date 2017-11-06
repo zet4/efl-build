@@ -25,6 +25,7 @@ export PKG_CONFIG_PATH="/opt/windows_$BITS/lib/pkgconfig"
 --disable-cxx-bindings \
 --disable-static \
 --disable-nls \
+--disable-doc \
 --with-eolian-gen="$native/eolian_gen" \
 --with-edje-cc="$native/edje_cc" \
 --with-eet-eet="$native/eet" \
