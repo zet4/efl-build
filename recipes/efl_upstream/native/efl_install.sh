@@ -8,6 +8,7 @@ cd ./sources/efl_upstream/efl
 
 ./autogen.sh \
 --prefix="$PREFIX" \
+--disable-doc \
 --with-systemdunitdir='$PREFIX/systemd_services'
 
 make clean
