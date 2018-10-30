@@ -1,6 +1,11 @@
 sudo: required
 dist: xenial
 language: c
+cache:
+  directories:
+    - $HOME/cachedir
+    - $HOME/.ccache
+    - $HOME/autom4te.cache
 
 addons:
   apt:
@@ -28,3 +33,6 @@ install:
 
 after_success:
   - ls -al ./deploy_$ARCH
+
+after_failure:
+  - cat ./sources/efl_upstream/efl/config.log
