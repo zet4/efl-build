@@ -2,11 +2,6 @@ sudo: required
 dist: trusty
 language: c
 
-addons:
-  apt:
-    packages:
-      - libssl1.0.0
-
 matrix:
   include:
     - compiler: x86_64-w64-mingw32-gcc
@@ -14,12 +9,14 @@ matrix:
       addons:
         apt:
           packages:
+            - libssl1.0.0
             - mingw-w64 
     - compiler: i586-mingw32msvc-gcc
       env: ARCH=i686
       addons:
         apt:
           packages:
+            - libssl1.0.0
             - mingw32
 
 before_install:
