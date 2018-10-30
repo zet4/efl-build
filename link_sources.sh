@@ -11,8 +11,8 @@ link() {
   esac
 
   case "$package" in
-    efl )      git -c http.sslVerify=false clone "$root/core/efl.git" "./sources/$efl/$package" ;;
-    eflete )   git -c http.sslVerify=false clone "$root/tools/eflete.git" "./sources/$efl/$package" ;;
+    efl )      git clone "$root/core/efl.git" "./sources/$efl/$package" ;;
+    eflete )   git clone "$root/tools/eflete.git" "./sources/$efl/$package" ;;
   esac
 }
 
