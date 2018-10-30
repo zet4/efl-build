@@ -6,29 +6,15 @@ link() {
   package=$2
   mkdir --parents "./sources/$efl"
 
-  if [ ! -e "./sources/$efl/$package" ]
-  then
-    read -e -p "[$efl] $package sources path: " -i "/" SRC
-    if [[ ! "${SRC}" == "/" ]]
-    then
-      if [ -e "$SRC" ]
-      then
-        SRC=$(cd "$SRC"; pwd)
-        ln -s "$SRC" "./sources/$efl/$package"
-      else
-        echo "Path doesn't exist: \"$SRC\""
-        echo "skipping"
-      fi
-    else
-      echo "skipping"
-    fi
-  fi
+  case "$efl" in
+    efl_upstream) root="https://git.enlightenment.org"
+  esac
+
+  case "$package" in
+    efl )      git clone "$root/core/efl.git" "./sources/$efl/$package" ;;
+    eflete )   git clone "$root/tools/eflete.git" "./sources/$efl/$package" ;;
+  esac
 }
 
-link efl_1.18 efl
-link efl_1.18 eflete
-link efl_tizen efl
-link efl_tizen elementary
-link efl_tizen eflete
 link efl_upstream efl
 link efl_upstream eflete

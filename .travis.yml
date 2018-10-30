@@ -1,0 +1,25 @@
+sudo: required
+dist: trusty
+language: c
+
+matrix:
+  include:
+    - compiler: x86_64-w64-mingw32-gcc
+      env: ARCH=x86_64
+    - compiler: i686-w64-mingw32-gcc
+      env: ARCH=i686
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install mingw-w64 mingw32
+  - 'chmod +x ./*.sh'
+  - ./setup.sh
+  - ./link_sources.sh
+
+script:
+  - ./build.sh efl_upstream native efl
+  - ./build.sh efl_upstream $ARCH efl
+  - cp -RL ./cross/$ARCH/upstream_efl ./deploy_$ARCH
+
+after_success:
+  - ls -al ./deploy_$ARCH
