@@ -26,7 +26,7 @@ before_install:
   - ./setup.sh
   - ./link_sources.sh
 
-install:
+script:
   - ./build.sh efl_upstream native efl
   - ./build.sh efl_upstream $ARCH efl
   - cp -RL ./cross/$ARCH/upstream_efl ./deploy_$ARCH
