@@ -20,6 +20,7 @@ matrix:
       env: ARCH=x86_64
     - compiler: i686-w64-mingw32-gcc
       env: ARCH=i686
+    - env: ARCH=x86_64
 
 before_install:
   - 'chmod +x ./*.sh'
