@@ -1,11 +1,10 @@
 sudo: required
-dist: trusty
+dist: xenial
 language: c
 
 addons:
   apt:
     packages:
-      - libssl1.0.0
       - mingw-w64 
 
 matrix:
