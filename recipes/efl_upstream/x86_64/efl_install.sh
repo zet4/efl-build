@@ -34,12 +34,10 @@ export CC="$HOST-gcc"
 ./autogen.sh \
 --prefix=/opt/windows_$BITS \
 --host=$HOST \
---with-windows-version=win7 \
 --disable-pulseaudio \
 --disable-physics \
 --disable-gstreamer \
 --disable-gstreamer1 \
---disable-avahi \
 --enable-lua-old \
 --with-crypto=none \
 --with-glib=no \

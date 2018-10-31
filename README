@@ -1,72 +1,12 @@
-efl-cross-build project is set of scripts that makes cross compilation of EFL on
-Linux for Windows easier.
+# EFL-Build [![Build Status](https://travis-ci.com/zet4/efl-build.svg?branch=master)](https://travis-ci.com/zet4/efl-build)
 
-PREPARATION:
-0. Install mingw-w64 tools
+Forked from [lorddrew/efl-cross-build](https://git.enlightenment.org/devs/lorddrew/efl-cross-build.git/) (@rimmed)
 
-1. sudo ./setup.sh
+## What the hell is this
 
-   this will create symlinks /opt/windows_32 and /opt/windows_64. This pathes are
-   hard-coded into packages from Win-Builds and we need them being available on
-   build system for package-config to work properly. This is the only operation
-   that requires root permissions.
+This project is essentially a collection of configs for TravisCI that are used to cross-compile upstream EFL for Windows.
+It was mainly done due to Win-Builds release being heavily out-of-date. (Last update being in late 2015.)
 
-2. ./link_sources.sh
+## How the hell do I use this
 
-   All build recipes are expecting to find source code in sources directory.
-   You can either copy them manualy or create links using ./link_sources.sh
-   Expected structrure:
-   sources/
-   ├── efl_1.18
-   │   ├── efl
-   │   └── eflete
-   ├── efl_tizen
-   │   ├── efl
-   │   ├── eflete
-   │   └── elementary
-   └── efl_upstream
-       ├── efl
-       └── eflete
-
-BUILD
-   Here are examples of your next steps
-
-1. Eflete on efl 1.18 for win64:
-   step 1: ./build.sh efl_1.18 native efl
-   step 2: ./build.sh efl_1.18 x86_64 efl
-   step 3: ./build.sh efl_1.18 x86_64 eflete
-
-2. Eflete on efl 1.18 for win32:
-   step 1: ./build.sh efl_1.18 native efl
-   step 2: ./build.sh efl_1.18 i686 efl
-   step 3: ./build.sh efl_1.18 i686 eflete
-
-3. Eflete on efl_tizen for win64:
-   step 1: ./build.sh efl_tizen native efl
-   step 2: ./build.sh efl_tizen native elementary
-   step 3: ./build.sh efl_tizen x86_64 efl
-   step 4: ./build.sh efl_tizen x86_64 elementary
-   step 5: ./build.sh efl_tizen x86_64 eflete
-
-4. Eflete on efl_tizen for win32:
-   step 1: ./build.sh efl_tizen native efl
-   step 2: ./build.sh efl_tizen native elementary
-   step 3: ./build.sh efl_tizen i686 efl
-   step 4: ./build.sh efl_tizen i686 elementary
-   step 5: ./build.sh efl_tizen i686 eflete
-
-5. Eflete on efl upstream for win64:
-   step 1: ./build.sh efl_upstream native efl
-   step 2: ./build.sh efl_upstream x86_64 efl
-   step 3: ./build.sh efl_upstream x86_64 eflete
-
-6. Eflete on efl upstream for win32:
-   step 1: ./build.sh efl_upstream native efl
-   step 2: ./build.sh efl_upstream x686 efl
-   step 3: ./build.sh efl_upstream x686 eflete
-
-DEPLOYMENT
-   Just copy files from /opt/windows_XX or ./cross/<TARGET_ARCH>/<TARGET_EFL>
-   expanding symlink. I.e:
-
-   cp -RL ./cross/x64_86/efl_1.18 ./deploy_folder
+For now? You don't, this will upload it's output to [github releases](/releases/latest) which is then consumed by upstream projects like fyne-io/bootstrap.
