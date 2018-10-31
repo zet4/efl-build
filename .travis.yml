@@ -32,6 +32,7 @@ before_install:
 script:
   - ./build.sh efl_upstream native efl
   - ./build.sh efl_upstream $ARCH efl
+  - ./build.sh efl_upstream $ARCH eflete
 
 after_success:
   - # Consider cleaning up build from stuff like mingw compiler...
