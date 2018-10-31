@@ -24,10 +24,10 @@ before_install:
   - 'chmod +x ./*.sh'
   - ./setup.sh
   - ./link_sources.sh  
+  - export EFL_GIT_HASH="$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
   - git config --local user.name "Aleksandr Tihomirov"
   - git config --local user.email "github@zetas.space"
-  - git tag "efl-$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
-
+  - git tag "efl-$(echo $EFL_GIT_HASH | head -c 8)"
 
 script:
   - ./build.sh efl_upstream native efl
@@ -42,5 +42,5 @@ deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: "./windows_$BIT.zip"
-  name: "efl@(git --git-dir ./sources/efl_upstream/efl/.git log --format=%h -1)"
+  name: "efl@$EFL_GIT_HASH"
   skip_cleanup: true
