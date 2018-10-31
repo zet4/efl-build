@@ -27,15 +27,15 @@ before_install:
   - export EFL_GIT_HASH="$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
   - git config --local user.name "Aleksandr Tihomirov"
   - git config --local user.email "github@zetas.space"
-  - git tag "efl-$(echo $EFL_GIT_HASH | head -c 8)"
+  - git tag "efl_$(echo $EFL_GIT_HASH | head -c 8)"
 
 script:
   - ./build.sh efl_upstream native efl
   - ./build.sh efl_upstream $ARCH efl
-  - cp -RL /opt/windows_$BIT ./deploy_$ARCH
 
 after_success:
-  - zip -r ./windows_$BIT.zip ./deploy_$ARCH
+  - # Consider cleaning up build from stuff like mingw compiler...
+  - zip -r ./windows_$BIT.zip /opt/windows_$BIT
   - ls -hl ./windows_$BIT.zip
 
 deploy:
