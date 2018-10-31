@@ -1,6 +1,7 @@
 sudo: required
 dist: xenial
 language: c
+if: tag IS blank
 cache:
   directories:
     - $HOME/cachedir
@@ -44,5 +45,3 @@ deploy:
   api_key: "$GITHUB_TOKEN"
   file: "./windows_$BIT.zip"
   skip_cleanup: true
-  on:
-    tags: false
