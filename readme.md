@@ -9,4 +9,4 @@ It was mainly done due to Win-Builds release being heavily out-of-date. (Last up
 
 ## How the hell do I use this
 
-For now? You don't, this will upload it's output to [github releases](https://github.com/zet4/efl-build/releases/latest) which is then consumed by upstream projects like fyne-io/bootstrap.
+For now? You don't, this will upload it's output to [github releases](https://github.com/zet4/efl-build/releases/latest) which is then consumed by upstream projects like fyne-io/bootstrap. Also it's worth keeping in mind that this project is still using Win-Builds style layout and will probably only work properly in environments like msys2.
