@@ -44,4 +44,5 @@ deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: "./windows_$BIT.zip"
+  name: "efl@(git --git-dir ./sources/efl_upstream/efl/.git log --format=%h -1)"
   skip_cleanup: true
