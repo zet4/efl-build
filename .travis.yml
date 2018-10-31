@@ -30,4 +30,17 @@ script:
   - cp -RL /opt/windows_$BIT ./deploy_$ARCH
 
 after_success:
-  - ls -al ./deploy_$ARCH
+  - zip -r ./windows_$BIT.zip ./deploy_$ARCH
+  - ls -hl ./windows_$BIT.zip
+
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "Aleksandr Tihomirov"
+  - git config --local user.email "github@zetas.space"
+  - git tag "efl-upstream-$(git log --format=%h -1)-$(date +'%Y%m%d%H')"
+
+deploy:
+  provider: releases
+  api_key: "$GITHUB_TOKEN"
+  file: "./windows_$BIT.zip"
+  skip_cleanup: true
