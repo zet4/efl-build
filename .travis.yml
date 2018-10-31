@@ -23,7 +23,11 @@ matrix:
 before_install:
   - 'chmod +x ./*.sh'
   - ./setup.sh
-  - ./link_sources.sh
+  - ./link_sources.sh  
+  - git config --local user.name "Aleksandr Tihomirov"
+  - git config --local user.email "github@zetas.space"
+  - git tag "efl-master-$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
+
 
 script:
   - ./build.sh efl_upstream native efl
@@ -33,12 +37,6 @@ script:
 after_success:
   - zip -r ./windows_$BIT.zip ./deploy_$ARCH
   - ls -hl ./windows_$BIT.zip
-
-before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "Aleksandr Tihomirov"
-  - git config --local user.email "github@zetas.space"
-  - git tag "efl-master-$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
 
 deploy:
   provider: releases
