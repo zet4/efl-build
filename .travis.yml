@@ -37,7 +37,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Aleksandr Tihomirov"
   - git config --local user.email "github@zetas.space"
-  - git tag "efl-upstream-$(git log --format=%h -1)-$(date +'%Y%m%d%H')"
+  - git tag "efl-master-$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
 
 deploy:
   provider: releases
