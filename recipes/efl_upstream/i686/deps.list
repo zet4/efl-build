@@ -98,4 +98,4 @@ winpthreads-v3.3.0-2-i686-w64-mingw32.txz
 zlib-1.2.8-1-i686-w64-mingw32.txz
 #zz_config-1.0.0-6-i686-w64-mingw32.txz
 #zz_config-1.0.0-7-i686-w64-mingw32.txz
-mingw-w64-i686-dlfcn-1.0.0-2-any.pkg.tar.xz;http://downloads.sourceforge.net/project/msys2/REPOS/MINGW/i686/mingw-w64-i686-dlfcn-1.0.0-2-any.pkg.tar.xz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fmsys2%2Ffiles%2FREPOS%2FMINGW%2Fi686%2F&ts=1476175952&use_mirror=heanet;mingw32 --strip-components 1
+mingw-w64-i686-dlfcn-1.0.0-2-any.pkg.tar.xz;http://repo.msys2.org/mingw/i686/mingw-w64-i686-dlfcn-1.0.0-2-any.pkg.tar.xz;mingw32 --strip-components 1
