@@ -16,8 +16,8 @@ addons:
 
 matrix:
   include:
-    - env: ARCH=x86_64
-    - env: ARCH=i686
+    - env: ARCH=x86_64 BIT=64
+    - env: ARCH=i686   BIT=32
 
 before_install:
   - 'chmod +x ./*.sh'
@@ -27,7 +27,7 @@ before_install:
 script:
   - ./build.sh efl_upstream native efl
   - ./build.sh efl_upstream $ARCH efl
-  - cp -RL ./cross/$ARCH/upstream_efl ./deploy_$ARCH
+  - cp -RL /opt/windows_$BIT ./deploy_$ARCH
 
 after_success:
   - ls -al ./deploy_$ARCH
