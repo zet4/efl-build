@@ -1,6 +1,6 @@
 # EFL-Build [![Build Status](https://travis-ci.com/zet4/efl-build.svg?branch=master)](https://travis-ci.com/zet4/efl-build)
 
-Forked from [lorddrew/efl-cross-build](https://git.enlightenment.org/devs/lorddrew/efl-cross-build.git/) (@rimmed)
+Forked from [lorddrew/efl-cross-build](https://git.enlightenment.org/devs/lorddrew/efl-cross-build.git/)
 
 ## What the hell is this
 
@@ -9,4 +9,4 @@ It was mainly done due to Win-Builds release being heavily out-of-date. (Last up
 
 ## How the hell do I use this
 
-For now? You don't, this will upload it's output to [github releases](/releases/latest) which is then consumed by upstream projects like fyne-io/bootstrap.
+For now? You don't, this will upload it's output to [github releases](https://github.com/zet4/efl-build/releases/latest) which is then consumed by upstream projects like fyne-io/bootstrap.
