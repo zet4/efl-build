@@ -29,14 +29,17 @@ export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
 export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua -llibintl"
 export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
 export PKG_CONFIG_PATH=""
+export CC="$HOST-gcc"
 
 ./autogen.sh \
 --prefix=/opt/windows_$BITS \
 --host=$HOST \
+--with-windows-version=win7 \
 --disable-pulseaudio \
 --disable-physics \
 --disable-gstreamer \
 --disable-gstreamer1 \
+--disable-avahi \
 --enable-lua-old \
 --with-crypto=none \
 --with-glib=no \
@@ -45,6 +48,7 @@ export PKG_CONFIG_PATH=""
 --disable-cxx-bindings \
 --disable-image-loader-jp2k \
 --disable-static \
+--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aaa \
 --with-eolian-gen="$native/eolian_gen" \
 --with-edje-cc="$native/edje_cc" \
 --with-eet-eet="$native/eet" \
