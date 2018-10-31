@@ -29,6 +29,7 @@ export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
 export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua -llibintl"
 export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
 export PKG_CONFIG_PATH=""
+export CC="$HOST-gcc"
 
 ./autogen.sh \
 --prefix=/opt/windows_$BITS \
