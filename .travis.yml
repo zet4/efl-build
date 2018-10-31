@@ -27,7 +27,7 @@ before_install:
   - export EFL_GIT_HASH="$(git --git-dir ./sources/efl_upstream/efl/.git log --format=%H -1)"
   - git config --local user.name "Aleksandr Tihomirov"
   - git config --local user.email "github@zetas.space"
-  - git tag "efl_$(echo $EFL_GIT_HASH | head -c 8)"
+  - git tag "efl_$EFL_GIT_HASH"
 
 script:
   - ./build.sh efl_upstream native efl
@@ -42,5 +42,5 @@ deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: "./windows_$BIT.zip"
-  name: "efl@$EFL_GIT_HASH"
+  name: "efl@$(echo $EFL_GIT_HASH | head -c 8)"
   skip_cleanup: true
