@@ -26,7 +26,7 @@ cd ./sources/efl_upstream/efl
 
 export CXXFLAGS="-I/opt/windows_$BITS/include/ -std=gnu++11 -fno-exceptions"
 export CFLAGS="-I/opt/windows_$BITS/include/ -g -O2"
-export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua -llibintl"
+export LDFLAGS="-L/opt/windows_$BITS/$LIBS/ -lws2_32 -llua -llibintl -lole32 -loleaut32"
 export PKG_CONFIG_LIBDIR="/opt/windows_$BITS/$LIBS/pkgconfig"
 export PKG_CONFIG_PATH=""
 export CC="$HOST-gcc"
