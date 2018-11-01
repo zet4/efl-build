@@ -17,7 +17,7 @@ addons:
 
 env:
   global:
-    - EFL_BRANCH=efl-1.20
+    - EFL_BRANCH=efl-1.19
   matrix:
     - ARCH=x86_64 BIT=64
     - ARCH=i686   BIT=32
