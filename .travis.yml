@@ -17,7 +17,7 @@ addons:
 
 env:
   global:
-    - EFL_BRANCH=efl-1.19
+    - EFL_BRANCH=efl-1.20
   matrix:
     - ARCH=x86_64 BIT=64
     - ARCH=i686   BIT=32
@@ -44,5 +44,5 @@ deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: "./windows_$BIT.zip"
-  name: "${EFL_VERSION:-efl@$(echo $EFL_GIT_HASH | head -c 8)}"
+  name: "${EFL_BRANCH:-efl@$(echo $EFL_GIT_HASH | head -c 8)}"
   skip_cleanup: true
