@@ -11,10 +11,10 @@ link() {
   esac
 
   case "$package" in
-    efl )      git clone "$root/core/efl.git" "./sources/$efl/$package" ;;
-    eflete )   git clone "$root/tools/eflete.git" "./sources/$efl/$package" ;;
+    efl )      git clone --single-branch -b "${EFL_BRANCH:-master}" "$root/core/efl.git" "./sources/$efl/$package" ;;
+    eflete )   git clone --single-branch -b master "$root/tools/eflete.git" "./sources/$efl/$package" ;;
   esac
 }
 
 link efl_upstream efl
-link efl_upstream eflete
+# link efl_upstream eflete
